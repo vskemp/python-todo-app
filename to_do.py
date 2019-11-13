@@ -6,8 +6,8 @@ def print_todos():
     if len(todo_list) == 0:
         print("You have nothing to do!")
     else:
-        for todo in todo_list:
-            print(todo)
+        for count, todo in enumerate(todo_list):
+            print(f"{count}; {todo}")
 
 # I need a way to add todos
 def add_todo(todo):
@@ -58,7 +58,8 @@ THE BEST TODO APP EVER
             new_todo = input("What do you need to do? ")
             add_todo(new_todo)
         elif choice == "3":
-            pass
+            index_to_complete = int(input("Complete which todo?"))
+            delete_todo(index_to_complete)
         else:
             print("Please enter a number of your choice.")
 
